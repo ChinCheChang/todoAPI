@@ -22,7 +22,7 @@ const db = knex({
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => {  res.json('This is working')});
+app.get('/', (req, res) => {  res.send('This is working')});
 app.post('/signin', (req, res) => signin.handleSignin(req, res, db, bcrypt));
 app.post('/register', (req, res) => register.handleRegister(req, res, bcrypt, db));
 app.get('/tasks', (req, res) => tasks.getTask(req, res, db));
