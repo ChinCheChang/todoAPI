@@ -32,6 +32,6 @@ app.delete('/tasks', (req, res) => tasks.deleteTask(req, res, db));
 
 
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log('Server is running');
 });
