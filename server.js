@@ -10,8 +10,11 @@ const tasks = require('./controllers/tasks');
 
 const app = express();
 const db = knex({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
+  client: 'pg',
+  connection:{
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  }  
 });
 
 app.use(bodyParser.json());
